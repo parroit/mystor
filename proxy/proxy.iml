@@ -4,8 +4,7 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="firebase" level="application" />
-    <orderEntry type="library" name="firebase-simple-login" level="application" />
+    <orderEntry type="library" name="Node.js v0.10.17 Core Modules" level="application" />
   </component>
 </module>
 

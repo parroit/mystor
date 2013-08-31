@@ -4,6 +4,9 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="angular" level="application" />
+    <orderEntry type="library" name="angularfire" level="application" />
+    <orderEntry type="library" name="angular-file-upload" level="application" />
   </component>
 </module>
 
