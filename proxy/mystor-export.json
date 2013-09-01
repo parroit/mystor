@@ -2,15 +2,14 @@
     "files":{
         "1489347139@facebook":[
             {
-                "name": "test.jpg"
+                "name": "test.jpg",
+                "size":0,
+                "status": "Idle"
             },
             {
-                "name": "itsmine.txt"
-            }
-        ],
-        "1489347139":[
-            {
-                "name": "notmine.txt"
+                "name": "itsmine.txt",
+                "size":0,
+                "status": "Idle"
             }
         ]
 

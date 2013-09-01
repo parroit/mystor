@@ -1,0 +1,52 @@
+<div ng-include="'templates/header.html'"></div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 panel panel-info">
+        <div class="panel-heading"><h3>Login with mystor account:</h3></div>
+        <div class="panel-body">
+            <p>{{ msg }}</p>
+            <form>
+                <input
+                       type="email"
+                       name="username"
+                       bt-label="User"
+                       required
+                       bt-horizontal
+                       ng-model="username">
+
+                <input type="password" name="password" bt-label="Password" required bt-horizontal ng-model="password">
+
+                <input type="checkbox" name="rememberMe" bt-label="Rimani collegato" required bt-horizontal ng-model="rememberMe">
+
+                <a class="btn btn-primary btn-large"  ng-click="login();">Login</a>
+
+                <a class="btn btn-success btn-large"  ng-click="register();">Registrati</a>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="social-login col-md-2 col-md-offset-2 panel panel-danger" >
+        <div class="panel-heading"><h3  >Login with Twitter:</h3></div>
+        <div class="panel-body">
+            <i class="text-warning icon-twitter icon-3x"></i>
+            <a class="btn btn-danger btn-large"  ng-click="loginTwitter();"><h3>Login</h3></a>
+
+        </div>
+    </div>
+    <div class="social-login col-md-2 col-md-offset-1 panel panel-success" ng-click="loginFacebook();">
+        <div class="panel-heading"><h3 class="text-success" >Login with Facebook</h3></div>
+        <div class="panel-body">
+            <i class="text-success icon-facebook icon-3x"></i>
+            <a class="btn btn-success btn-large"  ng-click="loginFacebook();">Login</a>
+
+        </div>
+    </div>
+    <div class="social-login col-md-2 col-md-offset-1 panel panel-warning" >
+        <div class="panel-heading"><h3 class="text-warning">Login with Github</h3></div>
+        <div class="panel-body">
+            <i class="text-warning icon-github icon-3x"></i>
+            <a class="btn btn-warning btn-large"  ng-click="loginGithub();">Login</a>
+
+        </div>
+    </div>
+</div>

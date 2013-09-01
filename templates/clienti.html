@@ -1,0 +1,65 @@
+
+
+<div class="row">
+    <div class="span2">
+        <a class="btn btn-primary" ng-click="add();">Crea nuovo cliente</a>
+    </div>
+    <div id="tb-pager" class="offset1 span4 pagination">
+
+        <ul>
+            <li><a class="pageFirst"><i class="icon-fast-backward"></i> &nbsp;</a></li>
+            <li><a class="pagePrev"><i class=" icon-backward"></i> &nbsp;</a></li>
+            <li><a class="page">12</a></li>
+            <li><a class="pageNext"><i class="icon-forward"></i> &nbsp;</a></li>
+            <li><a class="pageLast"><i class="icon-fast-forward"></i> &nbsp;</a></li>
+        </ul>
+
+    </div>
+    <div class="span3">
+
+        <form class="form-search filtra">
+            <input type="text" class="input-medium">
+            <button type="submit" class="btn">Cerca</button>
+        </form>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="span12">
+
+        <table paged-grid pager="#tb-pager" resource="clientiResource">
+
+
+            <col header="Ragione Sociale" field= "description" width= "120px" >
+            <col header=" " field= "secondaDescrizione" width= "120px" >
+            <col header="P.Iva" field= "partitaIva" width= "120px" >
+            <col header="C. Fiscale" field= "codiceFiscale" width= "180px" >
+
+            <col header="Fornitore" field= "fornitore" width= "50px" formatter="fillCheckBoxCell" >
+            <col header="Cliente" field= "cliente" width= "40px" formatter="fillCheckBoxCell" >
+
+            <col header="Indirizzo" field= "indirizzo" width= "70px" >
+            <col header="Cap" field= "cap" width= "70px" >
+            <col header="Comune" field= "comune" width= "70px" >
+            <col header="Provincia" field= "provincia" width= "70px" >
+
+
+            <col icon='edit' text="" action="edit">
+            <col icon='remove' text="" action="remove">
+
+
+
+        </table>
+
+
+
+    </div>
+</div>
+<div class="hidden-" id ="edit-cliente">
+
+</div>
+
+
+
+

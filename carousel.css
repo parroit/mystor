@@ -117,3 +117,24 @@ body {
 .marketing p {
     text-align: justify;
 }
+
+
+.panel {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+}
+
+input[type="checkbox"].form-control {
+    width: initial;
+}
+
+.social-login > .panel-body > i {
+    font-size: 48pt;
+    display: block;
+}
+
+.social-login > .panel-body > a {
+    font-size: 18pt;
+}
