@@ -1,7 +1,13 @@
 
-define(['js/mystorApp'], function (app) {
+define(['js/mystorApp','js/mimetype'], function (app,mimetype) {
     app.controller("IndexCtrl", function ($scope) {
 
+    });
+
+    app.filter('mimeicon',function(){
+        return function(fileName){
+            return "img/ext/" + mimetype.lookup(fileName,false,"text/plain").replace(/\//g,"_") + ".png";
+        }
     });
 
     function renderApp($scope,$window, angularFireCollection,  user, $http,fbToken) {

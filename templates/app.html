@@ -27,7 +27,10 @@
         </thead>
         <tbody>
         <tr ng-repeat="file in files">
-            <td ng-bind="file.name"></td>
+            <td >
+                <img ng-src="{{ file.name | mimeicon  }}">
+                <span ng-bind="file.name"></span>
+            </td>
             <td ng-bind="file.size | hsize"></td>
 
 
