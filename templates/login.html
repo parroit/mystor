@@ -1,6 +1,6 @@
 <div ng-include="'templates/header.html'"></div>
 <div class="row">
-    <div class="col-md-8 col-md-offset-2 panel panel-info">
+    <div class="col-md-5  panel panel-info">
         <div class="panel-heading"><h3>Login with mystor account:</h3></div>
         <div class="panel-body">
             <p>{{ msg }}</p>
@@ -19,32 +19,54 @@
 
                 <a class="btn btn-primary btn-large"  ng-click="login();">Login</a>
 
-                <a class="btn btn-success btn-large"  ng-click="register();">Registrati</a>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-5 col-md-offset-1 panel panel-primary">
+        <div class="panel-heading"><h3>Register to mystor:</h3></div>
+        <div class="panel-body">
+            <p>{{ msg }}</p>
+            <form>
+                <input
+                        type="email"
+                        name="username"
+                        bt-label="User"
+                        required
+                        bt-horizontal
+                        ng-model="registerData.username">
+
+                <input type="password" name="password" bt-label="Password" required bt-horizontal ng-model="registerData.password">
+                <input type="password" name="passwordRepeat" bt-label="Repeat password" required bt-horizontal ng-model="registerData.passwordRepeat">
+
+
+                <a class="btn btn-primary btn-large"  ng-click="register();">Register</a>
             </form>
         </div>
     </div>
 </div>
 <div class="row">
-    <div class="social-login col-md-2 col-md-offset-2 panel panel-danger" >
+    <div class="social-login col-md-3 panel panel-danger" >
         <div class="panel-heading"><h3  >Login with Twitter:</h3></div>
         <div class="panel-body">
-            <i class="text-warning icon-twitter icon-3x"></i>
-            <a class="btn btn-danger btn-large"  ng-click="loginTwitter();"><h3>Login</h3></a>
+            <i class="text-warning icon-twitter"></i>
+            <a class="btn btn-danger btn-large"  ng-click="loginTwitter();">Login</a>
 
         </div>
     </div>
-    <div class="social-login col-md-2 col-md-offset-1 panel panel-success" ng-click="loginFacebook();">
+    <div class="social-login col-md-3 col-md-offset-1 panel panel-success">
         <div class="panel-heading"><h3 class="text-success" >Login with Facebook</h3></div>
         <div class="panel-body">
-            <i class="text-success icon-facebook icon-3x"></i>
+            <i class="text-success icon-facebook"></i>
             <a class="btn btn-success btn-large"  ng-click="loginFacebook();">Login</a>
 
         </div>
     </div>
-    <div class="social-login col-md-2 col-md-offset-1 panel panel-warning" >
+    <div class="social-login col-md-3 col-md-offset-1 panel panel-warning" >
         <div class="panel-heading"><h3 class="text-warning">Login with Github</h3></div>
         <div class="panel-body">
-            <i class="text-warning icon-github icon-3x"></i>
+            <i class="text-warning icon-github"></i>
             <a class="btn btn-warning btn-large"  ng-click="loginGithub();">Login</a>
 
         </div>

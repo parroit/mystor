@@ -1,7 +1,7 @@
 define(['js/mystorApp'], function (mystor) {
 
     mystor.controller("LogoutCtrl",
-        function($scope,$location) {
+        function($scope,$location,$cookieStore) {
             $scope.user=null;
             var auth = new FirebaseSimpleLogin(mystor.firebase, function (error, user) {
                 if (user != null) {
@@ -11,6 +11,7 @@ define(['js/mystorApp'], function (mystor) {
                 $location.path("/login");
             });
             auth.logout();
+            $cookieStore.remove('mystor');
 
 
         }

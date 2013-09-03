@@ -1,6 +1,6 @@
 define(['js/mystorApp'], function (mystor) {
 
-    mystor.controller("LoginCtrl",function($scope,$location,$routeParams) {
+    mystor.controller("LoginCtrl",function($scope,$location,$routeParams,$cookies,$cookieStore,$http) {
             $scope.username = '';
             $scope.password = '';
 
@@ -9,18 +9,43 @@ define(['js/mystorApp'], function (mystor) {
 
             function createAuth() {
                 var auth = new FirebaseSimpleLogin(mystor.firebase, function (error, user) {
-                    if (user != null) {
-                        $scope.user = user;
-                        $location.path("/app");
-                    } else {
-                        $scope.user = null;
-                        $location.path("/login");
+                    if (user != null && !$scope.user) {
+
+                        $http({method: "GET",
+                            url: 'http://localhost:3000/auth',
+                            headers: {"X-Token": user.firebaseAuthToken }
+
+                        }).success(function (data, status, headers, config) {
+                            $cookieStore.put('mystor',user.firebaseAuthToken);
+
+                            $scope.user = user;
+                            $location.path("/app");
+                        }).error(function (error) {
+                                alert(error);
+                            });
+
                     }
 
                 });
                 return auth;
             }
+            $scope.register = function(){
+                var auth = createAuth();
 
+                auth.createUser($scope.registerData.username,$scope.registerData.password, function (error, user) {
+                    if (error){
+                        alert(error);
+                    } else if(user){
+                        auth.login('password', {
+                            rememberMe: false,
+                            email: $scope.registerData.username,
+                            password: $scope.registerData.password
+                        });
+                    }
+
+                });
+
+            };
             $scope.login = function(){
                 var auth = createAuth();
 

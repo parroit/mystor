@@ -133,8 +133,16 @@ input[type="checkbox"].form-control {
 .social-login > .panel-body > i {
     font-size: 48pt;
     display: block;
+    float:left;
 }
-
 .social-login > .panel-body > a {
     font-size: 18pt;
+    display: block;
+    margin-left: 30%;
+    margin-right: 30%;
+    width: 40%;
+}
+
+.navbar-wrapper {
+   padding: 0;
 }

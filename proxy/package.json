@@ -5,6 +5,8 @@
     "private": true,
     "dependencies": {
         "express": "3.x",
-        "firebase":"0.x.x"
+        "firebase":"0.x.x",
+        "graceful-fs":"2.0.0"
+
     }
 }
