@@ -28,16 +28,16 @@
         <tbody>
         <tr ng-repeat="file in files">
             <td >
-                <img ng-src="{{ file.name | mimeicon  }}">
+                <!--<img ng-src="{{ file.name | mimeicon  }}">-->
                 <span ng-bind="file.name"></span>
             </td>
             <td ng-bind="file.size | hsize"></td>
 
 
             <td>
-                <div class="btn-group btn-group-xs"
-                      ng-class="{hide: file.status != 'Idle'}"
-                        >
+                <div class="btn-group btn-group-xs"                  >
+                      <!--ng-class="{hide: file.status != 'Idle'}"-->
+
                     <button type="button" ng-click="download()" class="btn btn-primary"><span class="glyphicon glyphicon-cloud-download"></span> Download</button>
                     <button type="button" ng-click="delete()" class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span> Delete</button>
                     <button type="button" ng-click="share()" class="btn btn-success"><span class="glyphicon glyphicon-link"></span> Share</button>

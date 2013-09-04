@@ -10,8 +10,9 @@ define(['js/mystorApp'], function (mystor) {
             function createAuth() {
                 var auth = new FirebaseSimpleLogin(mystor.firebase, function (error, user) {
                     if (user != null && !$scope.user) {
-
-                        $http({method: "GET",
+                        $scope.user = user;
+                        $location.path("/app");
+                       /* $http({method: "GET",
                             url: 'http://localhost:3000/auth',
                             headers: {"X-Token": user.firebaseAuthToken }
 
@@ -22,9 +23,11 @@ define(['js/mystorApp'], function (mystor) {
                             $location.path("/app");
                         }).error(function (error) {
                                 alert(error);
-                            });
+                            });*/
 
                     }
+
+
 
                 });
                 return auth;
